@@ -1,0 +1,60 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Main {
+	
+	private static Scanner scanner;
+
+	public static void main(String[] args) {
+		scanner = new Scanner(System.in);
+		//private static Cromossomo melhorCromossomo = null;
+		
+		System.out.println("*****************Algoritmo Genético*****************");
+		System.out.println("**                                                **");
+		System.out.println("** Tipo de CrossOver: De ponto;                   **");
+		System.out.println("** Taxa de CrossOver: 0,7;                        **");
+		System.out.println("** Tipo de mutação: Clássica;                     **");
+		System.out.println("** Taxa de mutação: 0,2;                          **");
+		System.out.println("** Aptidão: Avaliação;                            **");
+		System.out.println("**                                                **");
+		System.out.println("** Seleção: - Inicialização aleaória              **");
+		System.out.println("**          - Elitismo                            **");
+		System.out.println("**          - Torneio                             **");
+		System.out.println("**                                                **");
+		System.out.println("****************************************************");
+		
+		System.out.println("Informe o número da população:");
+		int populacao = scanner.nextInt();
+		
+		System.out.println("Informe o número de geração:");
+		int geracao = scanner.nextInt();
+		
+		for(int i = 0 ; i < geracao ; i++) {
+			//List<Cromossomo> geracaoLista = new ArrayList<Cromossomo>();
+			for (int j = 0 ; j < populacao ; j++) {
+				/*Cromossomo cromossomo = new Cromossomo(view);
+				view.setCromossomo(cromossomo);
+				view.calculaCromossomo();
+				melhorAvalicao = cromossomo.getAvaliacao();
+				geracaoLista.add(cromossomo);*/
+			}
+
+			for (Cromossomo cromossomo : geracaoLista) {
+				/*if (cromossomo.getAvaliacao() < melhorAvalicao) {
+					melhorCromossomo = cromossomo;
+				}*/
+			}
+			
+			/*view.setCromossomo(melhorCromossomo);
+			view.calculaCromossomo();*/
+			
+			System.out.println("******************** GERAÇÃO " + i + " ********************");
+			System.out.println(" Cromossomo: " + melhorCromossomo.getCromossomo());
+			System.out.println(" avaliacao: " + melhorCromossomo.getAvaliacao());
+			System.out.println("***********************************************************");
+			System.out.println("");
+		}
+	}
+
+}

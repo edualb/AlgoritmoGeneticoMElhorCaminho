@@ -1,0 +1,13 @@
+package Avaliacao;
+
+import Cromossomo.Cromossomo;
+import Labirinto.PercorrerLabirinto;
+
+public class Avaliacao {
+
+	public Avaliacao() {}
+	
+	public Avaliacao(Cromossomo cromossomo) {
+		PercorrerLabirinto.PassosLabirinto(cromossomo);
+	}
+}

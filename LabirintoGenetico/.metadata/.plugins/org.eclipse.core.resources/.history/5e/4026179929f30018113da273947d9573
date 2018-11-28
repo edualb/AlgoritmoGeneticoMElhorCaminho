@@ -1,0 +1,12 @@
+package Avaliacao;
+
+import Cromossomo.Cromossomo;
+
+public class Avaliacao {
+
+	public Avaliacao() {}
+	
+	public Avaliacao(Cromossomo cromossomo) {
+		
+	}
+}

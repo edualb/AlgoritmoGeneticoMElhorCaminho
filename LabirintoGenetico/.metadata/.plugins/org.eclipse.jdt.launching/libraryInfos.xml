@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="D:\bndes-java-env\jdk\default" version="1.8.0_112">
+<bootpath>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\resources.jar"/>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\rt.jar"/>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\sunrsasign.jar"/>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\jsse.jar"/>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\jce.jar"/>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\charsets.jar"/>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\jfr.jar"/>
+<entry path="D:\bndes-java-env\jdk\default\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\bndes-java-env\jdk\default\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

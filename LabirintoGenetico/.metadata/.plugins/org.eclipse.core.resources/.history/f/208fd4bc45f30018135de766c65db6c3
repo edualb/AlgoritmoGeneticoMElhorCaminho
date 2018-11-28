@@ -1,0 +1,105 @@
+package Cromossomo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import Labirinto.GeraLabirinto;
+
+
+public class Cromossomo {
+	
+	private int [][] labirinto;
+	private List<String> cromossomo = new ArrayList<String>();
+	private int avaliacao;
+	
+	public Cromossomo() {}
+	
+	public Cromossomo(int[][] labirinto) {
+		this.labirinto = labirinto;
+		
+		String primeiroGene = completeToLeft(String.valueOf(GeraLabirinto.getInicioX()), '0', 3) + completeToLeft(String.valueOf(GeraLabirinto.getInicioY()), '0', 3);
+		cromossomo.add(primeiroGene);
+		
+		for (int i = 1 ; i < 8 ; i++) {
+			cromossomo.add(montaGene(GeraLabirinto.getFimX(), GeraLabirinto.getFimY()));
+		}
+		
+		String ultimoGene = completeToLeft(String.valueOf(GeraLabirinto.getFimX()), '0', 3) + completeToLeft(String.valueOf(GeraLabirinto.getFimY()), '0', 3);
+		cromossomo.add(ultimoGene);
+
+	}
+	
+	public int[][] getLabirinto() {
+		return labirinto;
+	}
+
+	public void setLabirinto(int[][] labirinto) {
+		this.labirinto = labirinto;
+	}
+
+	public List<String> getCromossomo() {
+		return cromossomo;
+	}
+
+	public int getAvaliacao() {
+		return avaliacao;
+	}
+
+	public void setAvaliacao(int avaliacao) {
+		this.avaliacao = avaliacao;
+	}
+
+	public String montaGene(int fimX, int fimY) {
+		int geraX = getRandomNumberInRange(1, fimX - 1);
+		int geraY = getRandomNumberInRange(1, fimY - 1);
+		
+		do {
+			geraX = getRandomNumberInRange(1, fimX - 1);
+			geraY = getRandomNumberInRange(1, fimY - 1);
+		} while (this.labirinto[geraY][geraX] == 9 
+					|| this.labirinto[geraY][geraX] == 1 
+					|| this.labirinto[geraY][geraX] == 5 
+					|| geraX == 1
+					||geraY == 1);
+		
+		this.labirinto[geraY][geraX] = 5;
+		
+		String x = completeToLeft(String.valueOf(geraX), '0', 3);
+		String y = completeToLeft(String.valueOf(geraY), '0', 3);
+
+		return x + y;
+	}
+	
+	
+	//http://www.guj.com.br/t/inserir-zeros-a-esquerda/70374
+	public static String completeToLeft(String value, char c, int size) {
+		String result = value;
+		while (result.length() < size) {
+			result = c + result;
+		}
+		return result;
+	}
+	
+	//https://www.mkyong.com/java/java-generate-random-integers-in-a-range/
+	private static int getRandomNumberInRange(int min, int max) {
+
+		if (min >= max) {
+			throw new IllegalArgumentException("max must be greater than min");
+		}
+
+		Random r = new Random();
+		return r.nextInt((max - min) + 1) + min;
+	}
+	
+	private static void limpaNosLabirinto(int[][] labirinto) {
+		for (int  linha = 0 ; linha < labirinto.length ; linha++) {
+			for (int coluna = 0 ; coluna < labirinto[0].length ; coluna++) {
+				if (labirinto[linha][coluna] == 5) {
+					labirinto[linha][coluna] = 0;
+				}
+			}
+		}
+	}
+	
+}
