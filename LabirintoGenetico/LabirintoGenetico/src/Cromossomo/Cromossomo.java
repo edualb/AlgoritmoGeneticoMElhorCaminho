@@ -29,8 +29,6 @@ public class Cromossomo {
 		String ultimoGene = completeToLeft(String.valueOf(GeraLabirinto.getFimX()), '0', 3) + completeToLeft(String.valueOf(GeraLabirinto.getFimY()), '0', 3);
 		cromossomo.add(ultimoGene);
 		
-		//imprimeLabirinto(labirinto);
-		
 		Avaliacao.Avaliar(this);
 
 	}

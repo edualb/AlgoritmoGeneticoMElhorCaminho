@@ -38,25 +38,21 @@ public class PercorrerLabirinto {
 
 								andaParaDireita();
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if (individuoY < destinoY && labirinto[individuoY+1][individuoX] != 1 && labirinto[individuoY+1][individuoX] != 2) {
 								
 								andaParaBaixo();
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if(individuoX > destinoX && labirinto[individuoY][individuoX-1] != 1 && labirinto[individuoY][individuoX-1] != 2) {
 								
 								andaParaTras();
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if(individuoY > destinoY && labirinto[individuoY-1][individuoX] != 1 && labirinto[individuoY-1][individuoX] != 2) {
 								
 								andaParaCima();
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if (individuoX == destinoX && individuoY < destinoY) {
 								
@@ -69,7 +65,6 @@ public class PercorrerLabirinto {
 								}
 
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if (individuoX == destinoX && individuoY > destinoY) {
 								
@@ -82,7 +77,6 @@ public class PercorrerLabirinto {
 								}
 								
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if (individuoY == destinoY && individuoX < destinoX) {
 								
@@ -95,7 +89,6 @@ public class PercorrerLabirinto {
 								}
 
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if (individuoY == destinoY && individuoX > destinoX) {
 								
@@ -108,7 +101,6 @@ public class PercorrerLabirinto {
 								}
 
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if (
 									(labirinto[individuoY][individuoX-1] == 1 || labirinto[individuoY][individuoX-1] == 2)
@@ -118,7 +110,6 @@ public class PercorrerLabirinto {
 								andaParaDireita();
 								labirinto[individuoY][individuoX-1] = 2;
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 
 							} else if (
 									(labirinto[individuoY][individuoX+1] == 1 || labirinto[individuoY][individuoX+1] == 2)
@@ -128,7 +119,6 @@ public class PercorrerLabirinto {
 								andaParaTras();
 								labirinto[individuoY][individuoX+1] = 2;
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if (
 									(labirinto[individuoY][individuoX+1] == 1 || labirinto[individuoY][individuoX+1] == 2)
@@ -138,7 +128,6 @@ public class PercorrerLabirinto {
 								andaParaBaixo();
 								labirinto[individuoY-1][individuoX] = 2;
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else if (
 									(labirinto[individuoY][individuoX+1] == 1 || labirinto[individuoY][individuoX+1] == 2)
@@ -148,7 +137,6 @@ public class PercorrerLabirinto {
 								andaParaCima();
 								labirinto[individuoY+1][individuoX] = 2;
 								cromossomo.setLabirinto(labirinto);
-								imprimeLabirinto(labirinto);
 								
 							} else {
 								labirinto = limpaCaminhosPercorridosLabirinto(labirinto);

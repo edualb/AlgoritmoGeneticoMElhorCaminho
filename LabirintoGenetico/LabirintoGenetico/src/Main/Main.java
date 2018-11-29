@@ -51,11 +51,11 @@ public class Main {
 				geracaoLista.add(cromossomo);*/
 			}
 			
+			melhorCromossomo = Avaliacao.buscaMelhorCromossomo(geracaoLista);
+			
 			for (Cromossomo cromossomo : geracaoLista) {
 				System.out.println(cromossomo.getCromossomo());
 				System.out.println(cromossomo.getAvaliacao());
-				//System.out.println(cromossomo.getAvaliacao());
-				//imprimeLabirinto(cromossomo.getLabirinto());
 			}
 
 			/*for (Cromossomo cromossomo : geracaoLista) {
@@ -67,25 +67,12 @@ public class Main {
 			/*view.setCromossomo(melhorCromossomo);
 			view.calculaCromossomo();*/
 			
-			//System.out.println("******************** GERAÇÃO " + i + " ********************");
-			/*System.out.println(" Cromossomo: " + melhorCromossomo.getCromossomo());
-			System.out.println(" avaliacao: " + melhorCromossomo.getAvaliacao());*/
+			System.out.println("******************** GERAÇÃO " + i + " ********************");
+			System.out.println(" Cromossomo: " + melhorCromossomo.getCromossomo());
+			System.out.println(" avaliacao: " + melhorCromossomo.getAvaliacao());
 			System.out.println("***********************************************************");
 			System.out.println("");
 		}
-	}
-	
-	private static void imprimeLabirinto(int[][] labirinto) {
-		for (int l = 0; l < labirinto.length; l++)  {  
-			for (int c = 0; c < labirinto[0].length; c++)     { 
-				System.out.print(labirinto[l][c] + " ");
-	       	}  
-	       	System.out.println(" ");
-		}
-		System.out.println("                                                                                                 ");
-		System.out.println("*************************************************************************************************");
-		System.out.println("*************************************************************************************************");
-		System.out.println("                                                                                                 ");
 	}
 
 }
