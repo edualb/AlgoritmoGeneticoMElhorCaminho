@@ -40,15 +40,18 @@ public class Main {
 		
 		for(int i = 0 ; i < geracao ; i++) {
 			List<Cromossomo> geracaoLista = new ArrayList<Cromossomo>();
-			for (int j = 0 ; j < populacao ; j++) {
-				Cromossomo cromossomo = new Cromossomo(labirinto);
-				//imprimeLabirinto(cromossomo.getLabirinto());
-				//Avaliacao.Avaliar(cromossomo);
-				geracaoLista.add(cromossomo);
-				/*view.setCromossomo(cromossomo);
-				view.calculaCromossomo();
-				melhorAvalicao = cromossomo.getAvaliacao();
-				geracaoLista.add(cromossomo);*/
+			
+			if (i == 0) {
+				for (int j = 0 ; j < populacao ; j++) {
+					Cromossomo cromossomo = new Cromossomo(labirinto);
+					geracaoLista.add(cromossomo);
+				}
+			} else {
+				geracaoLista.add(melhorCromossomo);
+				for (int j = 1 ; j < populacao ; j++) {
+					Cromossomo cromossomo = new Cromossomo(labirinto);
+					geracaoLista.add(cromossomo);
+				}
 			}
 			
 			melhorCromossomo = Avaliacao.buscaMelhorCromossomo(geracaoLista);
