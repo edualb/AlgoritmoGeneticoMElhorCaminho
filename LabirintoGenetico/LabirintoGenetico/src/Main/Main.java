@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import Avaliacao.Avaliacao;
 import Cromossomo.Cromossomo;
+import Crossover.Crossover;
 import Labirinto.GeraLabirinto;
 
 public class Main {
@@ -56,25 +57,17 @@ public class Main {
 			
 			melhorCromossomo = Avaliacao.buscaMelhorCromossomo(geracaoLista);
 			
-			for (Cromossomo cromossomo : geracaoLista) {
+			
+			/*for (Cromossomo cromossomo : geracaoLista) {
 				System.out.println(cromossomo.getCromossomo());
 				System.out.println(cromossomo.getAvaliacao());
-			}
-
-			/*for (Cromossomo cromossomo : geracaoLista) {
-				/*if (cromossomo.getAvaliacao() < melhorAvalicao) {
-					melhorCromossomo = cromossomo;
-				}*/
-			//}
+			}*/
 			
-			/*view.setCromossomo(melhorCromossomo);
-			view.calculaCromossomo();*/
-			
-			System.out.println("******************** GERAÇÃO " + i + " ********************");
+			/*System.out.println("******************** GERAÇÃO " + i + " ********************");
 			System.out.println(" Cromossomo: " + melhorCromossomo.getCromossomo());
 			System.out.println(" avaliacao: " + melhorCromossomo.getAvaliacao());
 			System.out.println("***********************************************************");
-			System.out.println("");
+			System.out.println("");*/
 		}
 	}
 

@@ -22,7 +22,7 @@ public class Cromossomo {
 		String primeiroGene = completeToLeft(String.valueOf(GeraLabirinto.getInicioX()), '0', 3) + completeToLeft(String.valueOf(GeraLabirinto.getInicioY()), '0', 3);
 		cromossomo.add(primeiroGene);
 		
-		for (int i = 1 ; i < 3 ; i++) {
+		for (int i = 1 ; i < 9 ; i++) {
 			cromossomo.add(montaGene(GeraLabirinto.getFimX(), GeraLabirinto.getFimY()));
 		}
 		
@@ -45,6 +45,10 @@ public class Cromossomo {
 		return cromossomo;
 	}
 
+	public void setCromossomo(List<String> cromossomo) {
+		this.cromossomo = cromossomo;
+	}
+
 	public int getAvaliacao() {
 		return avaliacao;
 	}
@@ -60,8 +64,7 @@ public class Cromossomo {
 		do {
 			geraX = getRandomNumberInRange(1, fimX - 1);
 			geraY = getRandomNumberInRange(1, fimY - 1);
-		} while (/*this.labirinto[geraY][geraX] == 9 
-					|| */this.labirinto[geraY][geraX] == 1 
+		} while (this.labirinto[geraY][geraX] == 1 
 					|| this.labirinto[geraY][geraX] == 5 
 					|| geraX == 1
 					||geraY == 1);
@@ -109,19 +112,24 @@ public class Cromossomo {
 		
 		return labirinto;
 	}
-	
-	private static void imprimeLabirinto(int[][] labirinto) {
-		for (int l = 0; l < labirinto.length; l++)  {  
-			for (int c = 0; c < labirinto[0].length; c++)     { 
-				System.out.print(labirinto[l][c] + " ");
-	       	}  
-	       	System.out.println(" ");
-		}
-		System.out.println("                                                                                                 ");
-		System.out.println("*************************************************************************************************");
-		System.out.println("*************************************************************************************************");
-		System.out.println("                                                                                                 ");
-	}
 
+	public void preparaNovoCenario() {
+		this.labirinto = this.limpaNosLabirinto(labirinto);
+		
+		for (int i = 1 ; i < this.getCromossomo().size() - 1 ; i++) {
+			int valorX = Integer.parseInt(this.getCromossomo().get(i).substring(0, 3));
+			int valorY = Integer.parseInt(this.getCromossomo().get(i).substring(3, 6));
+			
+			for (int  linha = 0 ; linha < labirinto.length ; linha++) {
+				for (int coluna = 0 ; coluna < labirinto[0].length ; coluna++) {
+					if (coluna == valorX || linha == valorY) {
+						labirinto[linha][coluna] = 5;
+					}
+				}
+			}
+		}
+		
+		Avaliacao.Avaliar(this);
 	
+	}
 }
