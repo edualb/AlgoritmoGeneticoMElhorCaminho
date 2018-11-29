@@ -8,6 +8,7 @@ import Avaliacao.Avaliacao;
 import Cromossomo.Cromossomo;
 import Crossover.Crossover;
 import Labirinto.GeraLabirinto;
+import Torneio.Torneio;
 
 public class Main {
 	
@@ -57,8 +58,23 @@ public class Main {
 			
 			melhorCromossomo = Avaliacao.buscaMelhorCromossomo(geracaoLista);
 			
+			List<Cromossomo> listaVencedores = new ArrayList<>();
 			
-			/*for (Cromossomo cromossomo : geracaoLista) {
+			int quantidadeTorneio = -1;
+			
+			do {
+				quantidadeTorneio = Cromossomo.getRandomNumberInRange(1, populacao);
+			}
+			while( quantidadeTorneio % 2 != 0 );
+			  
+			
+			for( int torneio = 0; torneio < quantidadeTorneio; torneio++)
+			{
+				listaVencedores.add(Torneio.torneio(geracaoLista));
+			}
+			
+						
+			for (Cromossomo cromossomo : geracaoLista) {
 				System.out.println(cromossomo.getCromossomo());
 				System.out.println(cromossomo.getAvaliacao());
 			}*/
