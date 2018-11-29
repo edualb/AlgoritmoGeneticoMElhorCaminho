@@ -210,19 +210,6 @@ public class PercorrerLabirinto {
 		passos++;
 
 	}
-	
-	private static void imprimeLabirinto(int[][] labirinto) {
-		for (int l = 0; l < labirinto.length; l++)  {  
-			for (int c = 0; c < labirinto[0].length; c++)     { 
-				System.out.print(labirinto[l][c] + " ");
-	       	}  
-	       	System.out.println(" ");
-		}
-		System.out.println("                                                                                                 ");
-		System.out.println("*************************************************************************************************");
-		System.out.println("*************************************************************************************************");
-		System.out.println("                                                                                                 ");
-	}
 
 	private static int[][] limpaCaminhosPercorridosLabirinto(int[][] labirinto) {
 		for (int  linha = 0 ; linha < labirinto.length ; linha++) {

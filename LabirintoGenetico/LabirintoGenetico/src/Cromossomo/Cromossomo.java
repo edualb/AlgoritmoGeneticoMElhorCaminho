@@ -16,13 +16,19 @@ public class Cromossomo {
 	
 	public Cromossomo() {}
 	
+	public Cromossomo(int [][] labirinto, List<String> cromossomo, int avaliacao) {
+		this.setAvaliacao(avaliacao);
+		this.setLabirinto(labirinto);
+		this.setCromossomo(cromossomo);
+	}
+	
 	public Cromossomo(int[][] labirinto) {
 		this.labirinto = this.limpaNosLabirinto(labirinto);
 		
 		String primeiroGene = completeToLeft(String.valueOf(GeraLabirinto.getInicioX()), '0', 3) + completeToLeft(String.valueOf(GeraLabirinto.getInicioY()), '0', 3);
 		cromossomo.add(primeiroGene);
 		
-		for (int i = 1 ; i < 9 ; i++) {
+		for (int i = 1 ; i < 6 ; i++) {
 			cromossomo.add(montaGene(GeraLabirinto.getFimX(), GeraLabirinto.getFimY()));
 		}
 		
@@ -116,7 +122,7 @@ public class Cromossomo {
 	public void preparaNovoCenario() {
 		this.labirinto = this.limpaNosLabirinto(labirinto);
 		
-		for (int i = 1 ; i < this.getCromossomo().size() - 1 ; i++) {
+		for (int i = 1 ; i < 6 ; i++) {
 			int valorX = Integer.parseInt(this.getCromossomo().get(i).substring(0, 3));
 			int valorY = Integer.parseInt(this.getCromossomo().get(i).substring(3, 6));
 			

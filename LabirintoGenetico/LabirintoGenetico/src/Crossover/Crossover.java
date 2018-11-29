@@ -11,7 +11,7 @@ public class Crossover {
 	public static void CrossOverDeUmPonto(Cromossomo primeiroCromossomo, Cromossomo segundoCromossomo) {
 		Double taxaCrossOver = 0.7;
 		Double resultadoCrossOver = (double) (getRandomNumberInRange(0, 100)/100);
-		int pontoCrossOver = getRandomNumberInRange(1, 10);
+		int pontoCrossOver = getRandomNumberInRange(1, 6);
 		List<String> cromossomoC1 = new ArrayList<String>();
 		List<String> cromossomoC2 = new ArrayList<String>();
 		
