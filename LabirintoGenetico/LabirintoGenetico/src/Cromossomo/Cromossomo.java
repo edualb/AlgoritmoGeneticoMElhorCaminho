@@ -114,7 +114,7 @@ public class Cromossomo {
 		}
 		
 		labirinto[1][1] = 7;
-		labirinto[10][10] = 5;
+		labirinto[GeraLabirinto.getFimY()][GeraLabirinto.getFimX()] = 5;
 		
 		return labirinto;
 	}
