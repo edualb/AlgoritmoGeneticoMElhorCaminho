@@ -77,7 +77,7 @@ public class Main {
 			for (Cromossomo cromossomo : geracaoLista) {
 				System.out.println(cromossomo.getCromossomo());
 				System.out.println(cromossomo.getAvaliacao());
-			}*/
+			}
 			
 			/*System.out.println("******************** GERAÇÃO " + i + " ********************");
 			System.out.println(" Cromossomo: " + melhorCromossomo.getCromossomo());
