@@ -9,14 +9,6 @@ import Cromossomo.Cromossomo;
 
 public class Torneio {
 
-	
-	private static int geraValorAleatorio(int tamanho) 
-	{
-		Random valorAleatorio = new Random();
-		
-		return valorAleatorio.nextInt(tamanho);
-	}
-	
 	public static Cromossomo torneio(List<Cromossomo> lista)
 	{
 		List<Cromossomo> listaEscolhidos = new ArrayList<>();	
@@ -26,8 +18,8 @@ public class Torneio {
 		
 		if(lista.size() > 0)
 		{
-			posicaoCromossomoPrimeiro = geraValorAleatorio(lista.size());
-			posicaoCromossomoSegundo = geraValorAleatorio(lista.size());
+			posicaoCromossomoPrimeiro = Cromossomo.getRandomNumberInRange(0, lista.size()-1);
+			posicaoCromossomoSegundo = Cromossomo.getRandomNumberInRange(0, lista.size()-1);
 
 			listaEscolhidos.add(lista.get(posicaoCromossomoPrimeiro));
 			listaEscolhidos.add(lista.get(posicaoCromossomoSegundo));
