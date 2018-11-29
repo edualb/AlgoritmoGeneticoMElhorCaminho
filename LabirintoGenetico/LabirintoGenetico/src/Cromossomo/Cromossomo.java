@@ -85,7 +85,7 @@ public class Cromossomo {
 	}
 	
 	//https://www.mkyong.com/java/java-generate-random-integers-in-a-range/
-	private static int getRandomNumberInRange(int min, int max) {
+	public static int getRandomNumberInRange(int min, int max) {
 
 		if (min >= max) {
 			throw new IllegalArgumentException("max must be greater than min");
