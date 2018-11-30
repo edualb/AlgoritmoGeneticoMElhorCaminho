@@ -10,12 +10,12 @@ public class Crossover {
 
 	public static void CrossOverDeUmPonto(Cromossomo primeiroCromossomo, Cromossomo segundoCromossomo) {
 		Double taxaCrossOver = 0.7;
-		Double resultadoCrossOver = (double) (getRandomNumberInRange(0, 100)/100);
+		Double resultadoCrossOver = (double) (getRandomNumberInRange(0, 100));
 		int pontoCrossOver = getRandomNumberInRange(1, 6);
 		List<String> cromossomoC1 = new ArrayList<String>();
 		List<String> cromossomoC2 = new ArrayList<String>();
 		
-		if (resultadoCrossOver < taxaCrossOver) {
+		if (resultadoCrossOver/100 < taxaCrossOver) {
 			for (int i = 0 ; i < pontoCrossOver ; i++) {
 				cromossomoC1.add(primeiroCromossomo.getCromossomo().get(i));
 				cromossomoC2.add(segundoCromossomo.getCromossomo().get(i));

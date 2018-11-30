@@ -8,6 +8,7 @@ import Avaliacao.Avaliacao;
 import Cromossomo.Cromossomo;
 import Crossover.Crossover;
 import Labirinto.GeraLabirinto;
+import Mutacao.Mutacao;
 import Torneio.Torneio;
 
 public class Main {
@@ -57,10 +58,7 @@ public class Main {
 				}
 				
 				int tamanhoNovaGeracao = geracaoLista.size();
-				
-				for (Cromossomo cromossomo : geracaoLista) {
-					proximaGeracaoLista.remove(cromossomo);
-				}
+				proximaGeracaoLista.clear();
 
 				for (int j = tamanhoNovaGeracao ; j < populacao ; j++) {
 					Cromossomo cromossomo = new Cromossomo(labirinto);
@@ -90,6 +88,9 @@ public class Main {
 				Cromossomo segundoCromossomo = listaTorneio.get(quantidadeCrossOver+1);
 				
 				Crossover.CrossOverDeUmPonto(primeiroCromossomo, segundoCromossomo);
+				
+				Mutacao.mutacaoCromossomo(primeiroCromossomo);
+				Mutacao.mutacaoCromossomo(segundoCromossomo);
 				
 				proximaGeracaoLista.add(primeiroCromossomo);
 				proximaGeracaoLista.add(segundoCromossomo);
